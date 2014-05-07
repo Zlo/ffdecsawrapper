@@ -161,6 +161,8 @@ make update
 
 git checkout stable
 
+git pull
+
 and run ./configure again.
 
 Aborting...
