@@ -150,6 +150,20 @@ Aborting...
   exit 1
 fi
 
+if ! [ "$SECOND_DIGIT" -lt 13 ]; then
+  echo -en "
+\E[1;33;44m
+3.13 and up kernels are supported in 'stable' branch.
+
+Do: 'git checkout stable', and run me again.
+\E[0m
+
+Aborting...
+
+"
+  exit 0
+fi
+
 # Check for use of v4l drivers
 
 if test "x$dvb_path" != "x"; then
