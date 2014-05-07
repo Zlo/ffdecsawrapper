@@ -153,13 +153,18 @@ fi
 if ! [ "$SECOND_DIGIT" -lt 13 ]; then
   echo -en "
 \E[1;33;44m
-3.13 and up kernels are supported in 'stable' branch.
+The kernel you are running is not supported in this branch.
 
-Do: 'git checkout stable', and run me again.
-\E[0m
+Kernels >= 3.13 are supported in the 'stable' branch. Do:
+
+make update
+
+git checkout stable
+
+and run ./configure again.
 
 Aborting...
-
+\E[0m
 "
   exit 0
 fi
