@@ -1,0 +1,9 @@
+*.ko.cmd
+*.o.cmd
+*.o
+*.a
+module/.tmp_versions
+module/Module.symvers
+module/dvbdev.h
+module/dvbloopback.mod.c
+module/modules.order

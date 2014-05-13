@@ -1,0 +1,8 @@
+objs/*.o
+objs/*.a
+FFdecsa/*.o
+FFdecsa/FFdecsa_test
+FFdecsa/FFdecsa_test.done
+config.mak
+ffdecsawrapper
+dvbloopback.ko
