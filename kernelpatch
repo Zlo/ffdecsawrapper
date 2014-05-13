@@ -57,7 +57,7 @@ exit 1
 
 # Get OS and release info
 
-if [ -f /usr/bin/lsb_release ]; then
+if which lsb_release >/dev/null; then
     OS=$( lsb_release -si )
     RELEASE=$( lsb_release -sc )
 fi
