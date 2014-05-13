@@ -160,7 +160,7 @@ will be patched for use with ffdecsawrapper.
         if ! [ "$?" -eq 0 ]; then
           fail
         fi
-        CC="$GCC" make -C $BUILD_DIR M=$CWD/drivers/media/dvb-core modules
+        CC="$GCC" make -C $BUILD_DIR M=$CWD/drivers/media/dvb-core modules KCPPFLAGS="-DFFCONFIG_DVB_MAX_ADAPTERS=16"
         mkdir -p /lib/modules/`uname -r`/updates/ffdecsawrapper > /dev/null 2>&1
         /usr/bin/install $CWD/drivers/media/dvb-core/dvb-core.ko /lib/modules/`uname -r`/updates/ffdecsawrapper
         if [ "$?" -eq 0 ]; then

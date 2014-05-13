@@ -13,5 +13,18 @@
  		if (err) {
  			fops_put(file->f_op);
  			file->f_op = fops_get(old_fops);
--- 
-
+--- drivers/media/dvb-core/dvbdev.h	2013-09-02 22:46:10.000000000 +0200
++++ drivers/media/dvb-core/dvbdev.h	2014-05-13 09:31:14.000000000 +0200
+@@ -30,8 +30,10 @@
+ 
+ #define DVB_MAJOR 212
+ 
+-#if defined(CONFIG_DVB_MAX_ADAPTERS) && CONFIG_DVB_MAX_ADAPTERS > 0
+-  #define DVB_MAX_ADAPTERS CONFIG_DVB_MAX_ADAPTERS
++#if defined(FFCONFIG_DVB_MAX_ADAPTERS) && FFCONFIG_DVB_MAX_ADAPTERS > 0
++  #define DVB_MAX_ADAPTERS FFCONFIG_DVB_MAX_ADAPTERS
++#elif defined(CONFIG_DVB_MAX_ADAPTERS) && CONFIG_DVB_MAX_ADAPTERS > 0
++  #define DVB_MAX_ADAPTERS CONFIG_DVB_MAX_ADAPTERS
+ #else
+   #define DVB_MAX_ADAPTERS 8
+ #endif
