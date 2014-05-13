@@ -144,7 +144,7 @@ d_start() {
           fi
         else 
           echo -e "$PROG is already running. \n\
-          \nUse /etc/init.d/ffdecsawrapper restart instead. \n"
+          \nUse service ffdecsawrapper restart instead. \n"
         fi
 
         if [ "${USEMYTHTV}" -ne 0 ]; then
